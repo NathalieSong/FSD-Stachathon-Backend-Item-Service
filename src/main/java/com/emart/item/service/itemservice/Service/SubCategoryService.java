@@ -23,17 +23,18 @@ public class SubCategoryService {
 	public List<SubCategoryDto> getByCategory(String categoryId) {
 		Category category = new Category();
 		category.setId(categoryId);
-		return subCategoryRepo.findByCategory(category)
-		  .stream().map(sc -> toDto(sc)).collect(Collectors.toList());
+		return toDtoList(subCategoryRepo.findByCategory(category));
 	}
 
 	public SubCategoryDto addSubCategory(SubCategoryDto subCategoryDto) {
+		SubCategory subCategory = fromDto(subCategoryDto);
+		subCategory.setId(null);
 		return toDto(
-			subCategoryRepo.save(fromDto(subCategoryDto))
+			subCategoryRepo.save(subCategory)
 		);
 	}
 
-	public SubCategoryDto toDto(SubCategory subCategory) {
+	private SubCategoryDto toDto(SubCategory subCategory) {
 		if (subCategory == null) {
 			return null;
 		}
@@ -48,7 +49,7 @@ public class SubCategoryService {
 		return scDto;
 	}
 
-	public SubCategory fromDto(SubCategoryDto subCategoryDto) {
+	private SubCategory fromDto(SubCategoryDto subCategoryDto) {
 		if (subCategoryDto == null) {
 			return null;
 		}
@@ -56,5 +57,9 @@ public class SubCategoryService {
 		BeanUtils.copyProperties(subCategoryDto, subCategory);
 		subCategory.setSpecification(subCategoryDto.getSpecification().toJSONString());
 		return subCategory;
+	}
+
+	private List<SubCategoryDto> toDtoList(List<SubCategory> subCategories) {
+		return subCategories.stream().map(sc -> toDto(sc)).collect(Collectors.toList());
 	}
 }

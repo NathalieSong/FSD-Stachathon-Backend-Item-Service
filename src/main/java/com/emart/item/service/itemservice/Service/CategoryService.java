@@ -17,17 +17,19 @@ public class CategoryService {
 	private CategoryRepository categoryRepo;
 
 	public List<CategoryDto> getAll() {
-		return categoryRepo.findAll()
-		  .stream().map(c -> toDto(c)).collect(Collectors.toList());
+		return toDtoList(categoryRepo.findAll());
+		  
 	}
 
 	public CategoryDto addCategory(CategoryDto categoryDto) {
+		Category category = fromDto(categoryDto);
+		category.setId(null);
 		return toDto(
-			categoryRepo.save(fromDto(categoryDto))
+			categoryRepo.save(category)
 		);
 	}
 
-	public CategoryDto toDto(Category category) {
+	private CategoryDto toDto(Category category) {
 		if (category == null) {
 			return null;
 		}
@@ -36,12 +38,16 @@ public class CategoryService {
 		return cDto;
 	}
 
-	public Category fromDto(CategoryDto categoryDto) {
+	private Category fromDto(CategoryDto categoryDto) {
 		if (categoryDto == null) {
 			return null;
 		}
 		Category category = new Category();
 		BeanUtils.copyProperties(categoryDto, category);
 		return category;
+	}
+
+	private List<CategoryDto> toDtoList(List<Category> categories) {
+		return categories.stream().map(c -> toDto(c)).collect(Collectors.toList());
 	}
 }

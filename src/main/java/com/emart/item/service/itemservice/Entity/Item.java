@@ -27,6 +27,9 @@ public class Item {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "categoryId")
+    private String categoryId;
+
     @Column(name = "subCategoryId")
     private String subCategoryId;
 
