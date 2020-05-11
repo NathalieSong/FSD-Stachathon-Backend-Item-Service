@@ -1,8 +1,22 @@
 package com.emart.item.service.itemservice.Repository;
 
+import java.util.List;
+
 import com.emart.item.service.itemservice.Entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 public interface CartRepository extends JpaRepository<Cart, String> {
-    
+    @Modifying
+    @Query("delete from Cart c where c.id in (:ids)")
+    void deleteByIds(List<String> ids);
+
+    @Modifying
+    @Query("delete from Cart c where c.buyerId = :buyerId")
+    void clearCart(String buyerId);
+
+    @Modifying
+    @Query("update Cart c set c.quantity = :quantity where id = :id")
+    void updateQuantity(String id, Number quantity);
 }
