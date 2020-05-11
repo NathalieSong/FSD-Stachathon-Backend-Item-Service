@@ -1,5 +1,7 @@
 package com.emart.item.service.itemservice.Entity;
 
+import java.math.BigDecimal;
+
 import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import lombok.Data;
@@ -26,7 +28,7 @@ public class SubCategory {
     private Category category;
 
     @Column(name = "gst", nullable = false)
-    private String gst;
+    private BigDecimal gst;
 
     @Column(name = "specification", columnDefinition = "json")
     private String specification;
