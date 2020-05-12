@@ -1,7 +1,6 @@
 package com.emart.item.service.itemservice.dto;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

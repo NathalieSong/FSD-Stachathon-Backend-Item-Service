@@ -61,8 +61,8 @@ public class CartService {
 	}
 
     private List<Object[]> queryByBuyer(String buyerId) {
-        String sql = "select c.id, c.item_id, i.name, i.description, i.price, c.quantity, i.stock_umber, c.created_date, i.pictures"
-        + " from cart c, item i where c.itemId = i.id and c.buyerId = :buyerId";
+        String sql = "select c.id, c.item_id, i.name, i.description, i.price, c.quantity, i.stock_umber, c.created_date, i.pictures, s.gst"
+        + " from cart c, item i, sub_category s where c.itemId = i.id and i.sub_category_id = s.id and c.buyerId = :buyerId";
         Query query = entityManager.createNativeQuery(sql);
         query.setParameter("buyerId", buyerId);
         return query.getResultList();
@@ -84,6 +84,7 @@ public class CartService {
                 ciDto.setCreatedDate((Date) obj[7]);
                 JSONArray pictures = parsePictures((String) obj[8]);
                 ciDto.setPicture(pictures.get(0).toString());
+                ciDto.setGst((BigDecimal) obj[9]);
                 results.add(ciDto);
             }
         }
@@ -101,12 +102,18 @@ public class CartService {
     }
     
     private Cart fromDto(CartDto cDto) {
+        if (cDto == null) {
+            return null;
+        }
         Cart cart = new Cart();
         BeanUtils.copyProperties(cDto, cart);
         return cart;        
     }
 
     private CartDto toDto(Cart cart) {
+        if (cart == null) {
+            return null;
+        }
         CartDto cDto = new CartDto();
         BeanUtils.copyProperties(cart, cDto);
         return cDto;        

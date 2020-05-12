@@ -13,6 +13,7 @@ public class CartItemDto {
     private String itemName;
     private String itemDesc;
     private BigDecimal itemPrice;
+    private BigDecimal gst;
     private Number stockNumber;
     private Date createdDate;
     private String picture;
