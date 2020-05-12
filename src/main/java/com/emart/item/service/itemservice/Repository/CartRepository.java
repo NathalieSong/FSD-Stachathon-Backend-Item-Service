@@ -1,8 +1,8 @@
-package com.emart.item.service.itemservice.Repository;
+package com.emart.item.service.itemservice.repository;
 
 import java.util.List;
 
-import com.emart.item.service.itemservice.Entity.Cart;
+import com.emart.item.service.itemservice.entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

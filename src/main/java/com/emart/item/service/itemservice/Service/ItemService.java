@@ -1,10 +1,10 @@
-package com.emart.item.service.itemservice.Service;
+package com.emart.item.service.itemservice.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.emart.item.service.itemservice.Entity.Item;
-import com.emart.item.service.itemservice.Repository.ItemRepository;
+import com.emart.item.service.itemservice.entity.Item;
+import com.emart.item.service.itemservice.repository.ItemRepository;
 import com.emart.item.service.itemservice.dto.ItemDto;
 import com.emart.item.service.itemservice.vo.ItemFilter;
 

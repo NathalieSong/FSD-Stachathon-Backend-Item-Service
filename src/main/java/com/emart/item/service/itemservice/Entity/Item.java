@@ -1,4 +1,4 @@
-package com.emart.item.service.itemservice.Entity;
+package com.emart.item.service.itemservice.entity;
 
 import java.math.BigDecimal;
 import javax.persistence.*;

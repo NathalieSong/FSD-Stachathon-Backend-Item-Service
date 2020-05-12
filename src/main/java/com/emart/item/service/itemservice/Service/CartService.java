@@ -1,4 +1,4 @@
-package com.emart.item.service.itemservice.Service;
+package com.emart.item.service.itemservice.service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import com.emart.item.service.itemservice.Entity.Cart;
-import com.emart.item.service.itemservice.Repository.CartRepository;
+import com.emart.item.service.itemservice.entity.Cart;
+import com.emart.item.service.itemservice.repository.CartRepository;
 import com.emart.item.service.itemservice.dto.CartDto;
 import com.emart.item.service.itemservice.dto.CartItemDto;
 import com.emart.item.service.itemservice.vo.CartQuantityUDFilter;

@@ -1,10 +1,10 @@
-package com.emart.item.service.itemservice.Service;
+package com.emart.item.service.itemservice.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.emart.item.service.itemservice.Entity.Category;
-import com.emart.item.service.itemservice.Repository.CategoryRepository;
+import com.emart.item.service.itemservice.entity.Category;
+import com.emart.item.service.itemservice.repository.CategoryRepository;
 import com.emart.item.service.itemservice.dto.CategoryDto;
 
 import org.springframework.beans.BeanUtils;

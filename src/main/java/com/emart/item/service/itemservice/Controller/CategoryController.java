@@ -1,8 +1,8 @@
-package com.emart.item.service.itemservice.Controller;
+package com.emart.item.service.itemservice.controller;
 
 import java.util.List;
 
-import com.emart.item.service.itemservice.Service.CategoryService;
+import com.emart.item.service.itemservice.service.CategoryService;
 import com.emart.item.service.itemservice.dto.CategoryDto;
 
 import org.springframework.beans.factory.annotation.Autowired;

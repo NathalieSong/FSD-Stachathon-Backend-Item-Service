@@ -1,11 +1,11 @@
-package com.emart.item.service.itemservice.Service;
+package com.emart.item.service.itemservice.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.emart.item.service.itemservice.Entity.Category;
-import com.emart.item.service.itemservice.Entity.SubCategory;
-import com.emart.item.service.itemservice.Repository.SubCategoryRepository;
+import com.emart.item.service.itemservice.entity.Category;
+import com.emart.item.service.itemservice.entity.SubCategory;
+import com.emart.item.service.itemservice.repository.SubCategoryRepository;
 import com.emart.item.service.itemservice.dto.SubCategoryDto;
 
 import org.json.simple.JSONObject;

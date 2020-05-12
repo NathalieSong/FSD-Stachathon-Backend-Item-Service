@@ -1,6 +1,6 @@
-package com.emart.item.service.itemservice.Controller;
+package com.emart.item.service.itemservice.controller;
 
-import com.emart.item.service.itemservice.Service.ItemService;
+import com.emart.item.service.itemservice.service.ItemService;
 import com.emart.item.service.itemservice.dto.ItemDto;
 import com.emart.item.service.itemservice.vo.ItemFilter;
 

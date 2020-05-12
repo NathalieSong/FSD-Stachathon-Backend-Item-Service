@@ -1,4 +1,4 @@
-package com.emart.item.service.itemservice.Controller;
+package com.emart.item.service.itemservice.controller;
 
 import java.util.List;
 import org.springframework.http.HttpStatus;
@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.emart.item.service.itemservice.Service.SubCategoryService;
+import com.emart.item.service.itemservice.service.SubCategoryService;
 import com.emart.item.service.itemservice.dto.SubCategoryDto;
 
 import org.springframework.beans.factory.annotation.Autowired;
