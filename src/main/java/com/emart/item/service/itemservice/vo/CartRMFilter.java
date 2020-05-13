@@ -7,4 +7,5 @@ import lombok.Data;
 @Data
 public class CartRMFilter {
     private List<String> cartIds;
+    private String buyerId;
 }

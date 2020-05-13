@@ -43,7 +43,7 @@ public class Item {
     private String remarks;
 
     @Column(name = "stockNumber", nullable = false)
-    private Number stockNumber;
+    private Integer stockNumber;
 
     @Column(name = "active", columnDefinition = "bit(1) default 1")
     private boolean active;

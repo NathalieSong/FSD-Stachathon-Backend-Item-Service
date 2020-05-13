@@ -8,7 +8,7 @@ import lombok.Data;
 public class CartDto {
     private String id;
     private String buyerId;
-    private Number quantity;
+    private Integer quantity;
     private String itemId;
     private Date createdDate;
 }

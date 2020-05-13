@@ -28,7 +28,7 @@ public class ItemController {
         return itemService.getAll();
     }
 
-    @GetMapping("")
+    @GetMapping("/byId")
     public ItemDto getById(@RequestParam("itemId") String itemId) {
         return itemService.getById(itemId);
     }

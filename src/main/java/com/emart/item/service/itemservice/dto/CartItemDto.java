@@ -8,13 +8,13 @@ import lombok.Data;
 @Data
 public class CartItemDto {
     private String id;
-    private Number quantity;
+    private Integer quantity;
     private String itemId;
     private String itemName;
     private String itemDesc;
     private BigDecimal itemPrice;
     private BigDecimal gst;
-    private Number stockNumber;
+    private Integer stockNumber;
     private Date createdDate;
     private String picture;
 }

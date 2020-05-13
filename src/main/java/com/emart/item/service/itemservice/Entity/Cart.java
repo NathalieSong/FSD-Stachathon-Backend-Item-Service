@@ -18,7 +18,7 @@ public class Cart {
     private String buyerId;
 
     @Column(name = "quantity")
-    private Number quantity;
+    private Integer quantity;
 
     @Column(name = "itemId")
     private String itemId;

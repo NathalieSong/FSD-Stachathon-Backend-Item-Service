@@ -1,7 +1,8 @@
 package com.emart.item.service.itemservice.dto;
 
 import java.math.BigDecimal;
-import org.json.simple.JSONObject;
+
+import org.json.simple.JSONArray;
 import lombok.Data;
 
 @Data
@@ -11,5 +12,5 @@ public class SubCategoryDto {
     private String description;
     private String categoryId;
     private BigDecimal gst;
-    private JSONObject specification;
+    private JSONArray specification;
 }

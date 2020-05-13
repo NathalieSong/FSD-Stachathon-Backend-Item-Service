@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class CartQuantityUDFilter {
     private String cartId;
-    private Number quantity;
+    private Integer quantity;
 }

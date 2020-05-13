@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface CartRepository extends JpaRepository<Cart, String> {
     @Modifying
-    @Query("delete from Cart c where c.id in (:ids)")
-    void deleteByIds(List<String> ids);
+    @Query("delete from Cart c where c.buyerId = :buyerId and c.id in (:ids)")
+    void deleteByBuyerAndIds(String buyerId, List<String> ids);
 
     @Modifying
     @Query("delete from Cart c where c.buyerId = :buyerId")
@@ -18,5 +18,5 @@ public interface CartRepository extends JpaRepository<Cart, String> {
 
     @Modifying
     @Query("update Cart c set c.quantity = :quantity where id = :id")
-    void updateQuantity(String id, Number quantity);
+    void updateQuantity(String id, Integer quantity);
 }

@@ -8,7 +8,7 @@ import com.emart.item.service.itemservice.entity.SubCategory;
 import com.emart.item.service.itemservice.repository.SubCategoryRepository;
 import com.emart.item.service.itemservice.dto.SubCategoryDto;
 
-import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.BeanUtils;
@@ -40,9 +40,10 @@ public class SubCategoryService {
 		}
 		SubCategoryDto scDto = new SubCategoryDto();
 		BeanUtils.copyProperties(subCategory, scDto);
+		scDto.setCategoryId(subCategory.getCategory().getId());
 		JSONParser parser = new JSONParser();
 		try {
-			scDto.setSpecification((JSONObject) parser.parse(subCategory.getSpecification()));
+			scDto.setSpecification((JSONArray) parser.parse(subCategory.getSpecification()));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -56,6 +57,9 @@ public class SubCategoryService {
 		SubCategory subCategory = new SubCategory();
 		BeanUtils.copyProperties(subCategoryDto, subCategory);
 		subCategory.setSpecification(subCategoryDto.getSpecification().toJSONString());
+		Category category = new Category();
+		category.setId(subCategoryDto.getCategoryId());
+		subCategory.setCategory(category);
 		return subCategory;
 	}
 
