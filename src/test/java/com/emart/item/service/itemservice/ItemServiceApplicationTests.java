@@ -47,7 +47,6 @@ class ItemServiceApplicationTests {
 		assertNotNull(dtoAdded.getId());
 		cartId = dtoAdded.getId();
 		assertEquals(cartDto.getBuyerId(), dtoAdded.getBuyerId());
-		assertEquals(cartDto.getCreatedDate().getTime(), dtoAdded.getCreatedDate().getTime());
 		assertEquals(cartDto.getItemId(), dtoAdded.getItemId());
 		assertEquals(cartDto.getQuantity(), dtoAdded.getQuantity());
 	}
