@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("api/subCategory")
+@RequestMapping("subCategory")
 public class SubCategoryController {
     @Autowired
     private SubCategoryService subCategoryService;

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/category")
+@RequestMapping("category")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
@@ -25,7 +25,7 @@ public class CategoryController {
         return categoryService.getAll();
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public ResponseEntity<CategoryDto> addCategory(@RequestBody CategoryDto categoryDto) {
         return new ResponseEntity<CategoryDto>(
             categoryService.addCategory(categoryDto),

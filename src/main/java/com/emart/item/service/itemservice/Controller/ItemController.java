@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/item")
+@RequestMapping("emartItem")
 public class ItemController {
     @Autowired
     private ItemService itemService;
@@ -43,7 +43,7 @@ public class ItemController {
         return itemService.getByFilter(filter);
     }
 
-    @PostMapping("")
+    @PostMapping("/add")
     public ResponseEntity<ItemDto> addItem(@RequestBody ItemDto itemDto) {
         return new ResponseEntity<ItemDto>(
             itemService.addItem(itemDto),
@@ -51,7 +51,7 @@ public class ItemController {
         );
     }
 
-    @PutMapping("")
+    @PutMapping("/update")
     public ResponseEntity<ItemDto> updateItem(@RequestBody ItemDto itemDto) {
         return new ResponseEntity<ItemDto>(
             itemService.updateItem(itemDto),
