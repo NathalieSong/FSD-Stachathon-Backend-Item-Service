@@ -1,0 +1,17 @@
+version: "3"
+services:
+  emart-item-service:
+    image: emart-item-service:latest
+    environment:
+      - DB_SERVER=127.0.0.1
+      - DB_PORT=3306
+      - DB_SCHEMA=item_db
+      - DB_USERNAME=item_db
+      - DB_PASSWORD=Item123
+      - EUREKA_URL=http://localhost:9000/eureka
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    network_mode: "host"

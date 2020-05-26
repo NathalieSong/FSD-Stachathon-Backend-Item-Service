@@ -1,9 +1,9 @@
 server:
-  port: 9001
+  port: 9004
 
 spring:
   application:
-    name: item-service
+    name: emart-item-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/item_db
@@ -17,3 +17,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9000/eureka
