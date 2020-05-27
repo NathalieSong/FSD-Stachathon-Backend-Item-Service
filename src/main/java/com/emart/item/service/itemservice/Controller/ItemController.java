@@ -23,7 +23,7 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
-    @GetMapping("")
+    @GetMapping("/getAll")
     public List<ItemDto> getAll() {
         return itemService.getAll();
     }

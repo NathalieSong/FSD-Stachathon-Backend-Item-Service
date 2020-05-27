@@ -20,7 +20,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     
-    @GetMapping("")
+    @GetMapping("/getAll")
     public List<CategoryDto> getAll() {
         return categoryService.getAll();
     }
