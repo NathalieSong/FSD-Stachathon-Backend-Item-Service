@@ -67,7 +67,11 @@ public class ItemService {
         BeanUtils.copyProperties(item, iDto);
         JSONParser parser = new JSONParser();
         try {
-            iDto.setSpecification((JSONObject) parser.parse(item.getSpecification()));
+            if (item.getSpecification() != null) {
+                iDto.setSpecification((JSONObject) parser.parse(item.getSpecification()));
+            } else {
+                iDto.setSpecification(new JSONObject());
+            }
         } catch (ParseException e) {
             e.printStackTrace();
         }
